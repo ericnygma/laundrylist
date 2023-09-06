@@ -1,9 +1,9 @@
-# PENGUIN 
+# PENGUIN.v1 
 
-## FINAL - Penguin
-- [Penguin](https://ericnygma.github.io/DMD4470/final/penguin/)
+## Penguin.v1
+- [Penguin](https://ericnygma.github.io/)
 
-# Penguin 
+# Penguin.v1 
 ### New users to penguin
 - must create an account with valid email and password
 ### Existing user
