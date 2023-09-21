@@ -8,7 +8,9 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/AlmostDry/Driven/Driven.v1.5/drivenvuetifully/',
   plugins: [
+    
     vue({ 
       template: { transformAssetUrls }
     }),
