@@ -4,29 +4,129 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <style lang="scss">
+      *,*::before,*::after {
+    box-sizing: border-box; 
+    }
+    body{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    /* STYLING FOR INPUTS */
+    .custom-field {
+        position: relative;
+        font-size: 14px;
+        padding-top: 20px;
+        margin-bottom: 5px;
+        width: 100%;
+    
+    }
+    .custom-field input{
+        border: none;
+        appearance: none;
+        background: #f2f2f2;
+        padding: 12px;
+        border-radius: 3px;
+        width:250px;
+        outline:none;
+        font-size: 14px;
+    }
+    .custom-field .placeholder {
+        position: absolute;
+        left: 12px;
+        top: calc(50% + 10px);
+        transform: translateY(-50%);
+        color: #aaa;
+        transition: 
+            top 0.3s ease,
+            font-size 0.3s ease,
+            color 0.3s ease;
+    }
+    .custom-field input:valid + .placeholder,
+    .custom-field input:focus + .placeholder {
+        top: 10px;
+        font-size: 10px;
+        color: #222;
+        transition: 0.2s;
+    }
+    /* LAYOUT FOR FORM */
+    #my-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    /* STYLING FOR BUTTON */
+    .btn {
+      background-color: white;
+      border: 2px solid #e7e7e7;
+      color: black;
+      padding: 8px 12px;
+      border-radius: 3px;
+      margin-top: 10px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      width: 100%;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+    .btn:hover {background-color: #e7e7e7;}
+    .dib{
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    p{
+      font-size: 12px;
+    }
+    </style>
+
+    <title>Contact Form</title>
 </head>
 <body>
-    <form id="my-form" action="https://formspree.io/f/mgerwvjp" method="POST">
-        <p>
-        <label>Name: </label>
-        <input type="text" name="name" />
-        </p>
-        <p>
-        <label>Email:</label>
-        <input type="email" name="email" />
-        </p>
-        <p>
-        <label>Subject:</label>
-        <input type="text" name="subject">
-        </p>
-        <p>
-        <label>Message:</label>
-        <input type="text" name="message" />
-        </p>
-        <button id="my-form-button">Submit</button>
-        <p id="my-form-status"></p>
-      </form>
+      
+  <div id="style-form">
+    <form action="https://formspree.io/f/mgerwvjp"
+    id="my-form"
+    method="POST">
+
+    <label for="" class="custom-field">
+      <input type="text" name="name" required/>
+      <span class="placeholder">Name</span>
+    </label>
+
+    <label for="" class="custom-field">
+      <input type="text" name="email" required/>
+      <span class="placeholder">Email</span>
+    </label>
+
+    <label for="" class="custom-field">
+      <input type="text" name="subject" required/>
+      <span class="placeholder">Subject</span>
+    </label>
+
+    <label for="" class="custom-field">
+      <input type="text" name="message" required/>
+      <span class="placeholder">Message</span>
+    </label>
+
+    <div class="dib">
+      <input id="my-form-button" class="btn" type="submit" value="Send">
+    </div>
+    
+    <div>
+      <p id="my-form-status"></p>
+    </div>
+    </form>
+    
+  </div>
 
     
       <script>
@@ -47,7 +147,7 @@
               if (!response.ok){
                   throw new Error('response not ok');
               }
-            status.innerHTML = "Thanks for your submission!";
+            status.innerHTML = "Thank you, Someone will contact you soon!";
             form.reset()
           }).catch(error => {
             status.innerHTML = "Oops! There was a problem submitting your form"
