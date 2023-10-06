@@ -25,7 +25,7 @@
                   <!-- LEFT DRAW -->
 
                   <v-sheet
-                  color="primary"
+                  color="Black"
                   class="pa-4"
                   
                 >
@@ -55,7 +55,7 @@
                  >
                  <a href="href"> </a>
                     <v-list-item-icon class="mr-2">
-                      <v-icon color="primary">{{ icon }}</v-icon>
+                      <v-icon color="Black">{{ icon }}</v-icon>
                     </v-list-item-icon>
           
                     <v-list-item-content>
@@ -67,8 +67,8 @@
 
                </v-navigation-drawer>
             
-                <v-app-bar app height="72" clipped-right>
-                  <v-app-bar-nav-icon @click="drawer = !drawer" color="primary"></v-app-bar-nav-icon>
+                <v-app-bar app height="72" clipped-right flat>
+                  <v-app-bar-nav-icon @click="drawer = !drawer" color="Black"></v-app-bar-nav-icon>
             
                   <v-toolbar-title>Profile</v-toolbar-title>
                   
@@ -165,7 +165,7 @@
                     >
                       <template v-slot:activator="{ on, attrs }">
                         <v-btn
-                          color="primary"
+                          color="Black"
                           dark
                           v-bind="attrs"
                           v-on="on"
@@ -208,14 +208,14 @@
                         <v-card-actions>
                           <v-spacer></v-spacer>
                           <v-btn
-                            color="blue darken-1"
+                            color="Black darken-1"
                             text
                             @click="dialog = false"
                           >
                             Close
                           </v-btn>
                           <v-btn
-                            color="blue darken-1"
+                            color="Black darken-1"
                             text
                             @click="editProfile(); dialog = false"
                           >
@@ -242,8 +242,9 @@
               <v-spacer></v-spacer>
               <v-btn
                 :loading="isLoading"
-                class="white--text"
-                color="primary"
+                class="black--text"
+                color="Black"
+                outlined
                 depressed
                 @click="logout()"
               >

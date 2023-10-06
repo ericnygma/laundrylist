@@ -30,7 +30,7 @@
                   app
                 >
                  <v-sheet
-                  color="primary"
+                  color="black"
                   class="pa-4"
                 >
                   <v-avatar
@@ -58,7 +58,7 @@
                  >
                  <a href="href"> </a>
                     <v-list-item-icon class="mr-2">
-                      <v-icon color="primary">{{ icon }}</v-icon>
+                      <v-icon color="Black">{{ icon }}</v-icon>
                     </v-list-item-icon>
           
                     <v-list-item-content>
@@ -68,8 +68,8 @@
                 </v-list>
               </v-navigation-drawer>
               <!-- TOP BAR WITH PAGE DESCRIPTION -->
-             <v-app-bar app height="72" clipped-right>
-                  <v-app-bar-nav-icon @click="drawer = !drawer" color="primary"></v-app-bar-nav-icon>
+             <v-app-bar app height="72" clipped-right flat>
+                  <v-app-bar-nav-icon @click="drawer = !drawer" color="Black"></v-app-bar-nav-icon>
             
                   <v-toolbar-title>DM</v-toolbar-title>
                 </v-app-bar>
@@ -80,28 +80,30 @@
                      app
                      bottom
                      color="white lighten-1"
-                     elevation="5"
                      height="85"
                      class="ma-2"
-                     
+                     flat
+                     auto-grow
                    >
                    <v-textarea
                    v-model="message.content"
                    auto-grow
-                   label="What's good?"
-                   placeholder="What's your message?"
+                   placeholder="What's good?"
                    :rules="[rules.counter]"
                    counter
                    maxlength="225"
                    row="1"
                    row-height="5"
+                   color="black"
+                   outlined
+                   bottom
                  ></v-textarea>
              <v-btn 
              icon
              large
              @click="send()"
              >
-             <v-icon color="primary">mdi-penguin</v-icon>
+             <v-icon color="black">mdi-penguin</v-icon>
              </v-btn>
                  </v-app-bar>
 <v-main>
@@ -122,6 +124,7 @@
                    :items="contacts"
                     label="To:"
                     v-model="message.to"
+                    color="black"
                     ></v-select>
                    <!-- <v-textarea
                       v-model="message.to"

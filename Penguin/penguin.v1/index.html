@@ -14,37 +14,26 @@
     <v-app>
       <v-main>
         <v-container>
-          <div class="mx-auto"
-          style="max-width:200px;">
-          <div>
-            <v-img src="penguin.svg"></v-img>
-          </div>
           
-          </div>
+          <v-img src="penguin.svg" width="100"
+          class="mx-auto my-12"></v-img>
 
             <v-card
-    class="mx-auto"
-    style="max-width: 500px;"
+            class="mx-auto"
+            max-width="500px"
+            flat
   >
     
     <v-toolbar
-      color="black"
       cards
-      dark
       flat
     >
-      <!-- <v-btn icon>
-        <v-icon>mdi-arrow-left</v-icon>
-      </v-btn> -->
-      
-      <v-card-title class="text-h6 font-weight-regular">
+      <v-card-title class="text-h4 font-weight-regular">
         Sign up
       </v-card-title>
       <v-spacer></v-spacer>
      
-      <!-- <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn> -->
+      
     </v-toolbar>
     <v-form
       ref="form"
@@ -53,57 +42,48 @@
     >
     <v-textarea
         v-model="username"
-        auto-grow
-        filled
-        color="primary"
+        color="Black"
         label="Username"
         rows="1"
+        outlined
       ></v-textarea>
 
     <v-text-field
         v-model="email"
         :rules="[rules.email]"
-        filled
-        color="primary"
+        color="Black"
         label="Email address"
         type="email"
+        outlined
     ></v-text-field>
 
       <v-text-field
         v-model="password"
         :rules="[rules.password, rules.length(6)]"
-        filled
-        color="primary"
+        color="Black"
         counter="6"
         label="Password"
-        style="min-height: 96px"
         type="password"
+        outlined
       ></v-text-field>
 
-      <!-- <v-text-field
-        v-model="phone"
-        filled
-        color="deep-purple"
-        label="Phone number"
-      ></v-text-field> -->
-
-     
       <v-textarea
         v-model="bio"
         auto-grow
-        filled
-        color="primary"
+        color="Black"
         label="Bio"
         rows="1"
+        outlined
       ></v-textarea>
-      <p><a href="signin_user.html">Already have an account. Sign In.</a></p>
+      <div class="text-body-1"><a href="signin_user.html">Already have an account. Sign In.</a></div>
       <v-checkbox
         v-model="agreement"
         :rules="[rules.required]"
         color="primary"
       >
         <template v-slot:label>
-          I agree to the&nbsp;
+          <div class="text-caption">
+            I agree to the&nbsp;
           <a
             href="#"
             @click.stop.prevent="dialog = true"
@@ -113,22 +93,24 @@
             href="#"
             @click.stop.prevent="dialog = true"
           >Privacy Policy</a>*
+          </div>
+          
         </template>
       </v-checkbox>
     </v-form>
-    <v-divider></v-divider>
+    <!-- <v-divider></v-divider> -->
     <v-card-actions>
-      <v-btn
+      <!-- <v-btn
         text
         @click="$refs.form.reset()"
       >
         Clear
-      </v-btn>
+      </v-btn> -->
       <v-spacer></v-spacer>
       <v-btn
         :disabled="!form"
-        class="white--text"
-        color="primary"
+        class="black--text"
+        color="Black"
         depressed
         @click="addNewUser()"
       >
