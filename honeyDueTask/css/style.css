@@ -295,6 +295,10 @@ textarea.noteArea {
   max-width: 100%;
   margin-bottom: 60px;
   justify-items: center;
+  font-family: "pinot-grigio-modern", sans-serif;
+  font-weight: 300;
+  font-size: 4.5rem;
+  font-style: normal;
   
 }
 /* .completed {
